@@ -251,6 +251,7 @@ public class TimedRollingFileAppender extends AbstractRollingFileAppender {
     /**
      *
      */
+    @Override
     public void rollOver() {
         /* Compute filename, but only if datePattern is specified */
         if (datePattern == null) {

@@ -99,6 +99,7 @@ public abstract class AbstractRollingFileAppender implements TraceAppender {
     public void append(String log) throws IOException {
         if (bos != null) {
             waitUntilRollFinish();
+            // rolling now
             if (shouldRollOverNow() && isRolling.compareAndSet(false, true)) {
                 try {
                     rollOver();

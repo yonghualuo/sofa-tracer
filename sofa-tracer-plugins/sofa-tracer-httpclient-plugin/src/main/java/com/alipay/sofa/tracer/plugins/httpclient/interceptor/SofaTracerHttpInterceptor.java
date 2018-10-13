@@ -42,6 +42,14 @@ public class SofaTracerHttpInterceptor extends AbstractHttpRequestInterceptor
         super(httpClientTracer, appName, targetAppName);
     }
 
+    /**
+     * request
+     *
+     * @param httpRequest
+     * @param httpContext
+     * @throws HttpException
+     * @throws IOException
+     */
     @Override
     public void process(HttpRequest httpRequest, HttpContext httpContext) throws HttpException,
                                                                          IOException {
@@ -53,6 +61,14 @@ public class SofaTracerHttpInterceptor extends AbstractHttpRequestInterceptor
         super.appendHttpClientRequestSpanTags(httpRequest, httpClientSpan);
     }
 
+    /**
+     * response
+     *
+     * @param httpResponse
+     * @param httpContext
+     * @throws HttpException
+     * @throws IOException
+     */
     @Override
     public void process(HttpResponse httpResponse, HttpContext httpContext) throws HttpException,
                                                                            IOException {
